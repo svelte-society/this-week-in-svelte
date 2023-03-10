@@ -3,6 +3,6 @@
 
 <nav>
 	<ul>
-		<li><a href="/link">Links on a page</a></li>
+		<li><a href="/links">Links on a page</a></li>
 	</ul>
 </nav>
