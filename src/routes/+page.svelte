@@ -4,4 +4,5 @@
 <ul>
 	<li><a href="/links">Links on a page</a></li>
 	<li><a href="/dynamic-form">Progressively enhanced form that can add or remove inputs</a></li>
+	<li><a href="/streaming">Streaming promises from server `load`</a></li>
 </ul>
