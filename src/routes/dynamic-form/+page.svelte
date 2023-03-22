@@ -4,6 +4,12 @@
 	/** @type {import('./$types').ActionData} */
 	export let form;
 	$: console.log({ form });
+	let pets = [''];
+	$: {
+		if (form?.pets) {
+			pets = form.pets;
+		}
+	}
 </script>
 
 <svelte:head>
@@ -43,7 +49,7 @@
 		</label>
 	</fieldset>
 	<br />
-	{#each form?.pets || [''] as pet, i}
+	{#each pets as pet, i}
 		<label for="petname-{i}">Pet #{i + 1}'s name</label>
 		<input id="petname-{i}" type="text" name="petname[]" value={pet} />
 		<button class="remove" formaction="?/removePet&pet={i}">Remove pet #{i + 1}</button>

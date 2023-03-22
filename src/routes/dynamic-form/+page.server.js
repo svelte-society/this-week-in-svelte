@@ -9,7 +9,8 @@ export const actions = {
 		/**
 		 * The pets.
 		 */
-		const pets = [...formItems.getAll('petname[]'), ''];
+		let pets = Array.from(formItems.getAll('petname[]'), (el) => el.toString());
+		pets.push('');
 
 		return { items, pets };
 	},
