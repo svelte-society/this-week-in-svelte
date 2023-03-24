@@ -1,5 +1,7 @@
 <svelte:head><title>Links</title></svelte:head>
 
+<h1>Underlined links demonstration</h1>
+
 <p>
 	Look again at that dot. That's here. That's home. That's us. On it everyone you love, <a
 		href="#main"
