@@ -1,0 +1,3 @@
+// Vitest Snapshot v1
+
+exports[`Card.svelte > mounts 1`] = `"<div><div class=\\"card svelte-1g8u0r7\\"></div></div>"`;
