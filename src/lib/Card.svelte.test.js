@@ -12,6 +12,8 @@ describe('Card.svelte', () => {
 	})
 
 	it('renders purple', () => {
-		// Figure it out!
+		// <Card kind="purple" />
+		const { container } = render(Card, { kind: 'purple' })
+		expect(container.innerHTML).toMatchSnapshot()
 	})
 })
