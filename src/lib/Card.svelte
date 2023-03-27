@@ -3,7 +3,11 @@
 	export let kind = null
 </script>
 
-<div class="card" class:purple={kind === 'purple'} class:green={kind === 'green'}>
+<div
+	class="card"
+	class:purple={kind === 'purple'}
+	class:green={kind === 'green'}
+>
 	<slot />
 </div>
 
