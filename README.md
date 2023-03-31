@@ -16,3 +16,8 @@ Tools and features showcased in this repository:
   - Snapshot tests
 - Playwright
   - Full page accessibility testing
+
+Other examples:
+
+- [Static blog with live
+  data](./_examples/static-blog-with-data/)
