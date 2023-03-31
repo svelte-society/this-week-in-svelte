@@ -9,7 +9,10 @@
 </main>
 
 <footer>
-	<a href="/">Home</a>
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/gallery">Gallery</a></li>
+	</ul>
 </footer>
 
 <style>
