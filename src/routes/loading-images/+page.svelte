@@ -25,7 +25,8 @@
 <figure>
 	<img src={cat} alt="An orange cat" width="300" />
 	<figcaption>
-		Photo by <a
+		Loaded via import! <br />Photo by
+		<a
 			href="https://unsplash.com/es/@sadmax?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
 			>Amber Kipp</a
 		>
