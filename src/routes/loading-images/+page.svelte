@@ -1,6 +1,26 @@
 <script>
 	import cat from '$lib/catty2.jpeg'
+
+	/** @type {import('$lib/types').Pet[]} */
+	const pets = [
+		{
+			species: 'cat',
+			age: 10
+		},
+		{
+			species: 'dog',
+			age: 7
+		}
+	]
 </script>
+
+<h2>Pet samples</h2>
+
+{#each pets as pet}
+	<p>Pet species: {pet.species}<br />Pet age: {pet.age}</p>
+{/each}
+
+<h2>Some cat photos!</h2>
 
 <figure>
 	<img
