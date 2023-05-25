@@ -1,0 +1,10 @@
+{
+	"[svelte]": {
+		"editor.defaultFormatter": "svelte.svelte-vscode"
+	},
+	"editor.rulers": [60, 80],
+	"rewrap.wrappingColumn": 60,
+	"editor.fontSize": 14,
+	"debug.allowBreakpointsEverywhere": true,
+	"editor.wordWrap": "bounded"
+}
