@@ -7,8 +7,8 @@
 		{
 			"name": "Launch server",
 			"request": "launch",
-			"runtimeArgs": ["run-script", "dev"],
-			"runtimeExecutable": "npm",
+			"runtimeArgs": ["dev"],
+			"runtimeExecutable": "pnpm",
 			"skipFiles": ["<node_internals>/**"],
 			"type": "node",
 			"console": "integratedTerminal"

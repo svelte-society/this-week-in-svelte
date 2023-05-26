@@ -12,7 +12,13 @@
 			age: 7
 		}
 	]
+
+	const handler = () => {
+		console.log('handled!')
+	}
 </script>
+
+<button on:click={handler}>Example</button>
 
 <h2>Pet samples</h2>
 

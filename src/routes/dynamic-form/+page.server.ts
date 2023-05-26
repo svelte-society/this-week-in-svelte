@@ -1,5 +1,6 @@
-/** @type {import('./$types').Actions} */
-export const actions = {
+import type { Actions } from './$types'
+
+export const actions: Actions = {
 	addPet: async ({ request }) => {
 		const formItems = await request.formData()
 		console.log({ formItems })
@@ -9,7 +10,7 @@ export const actions = {
 		/**
 		 * The pets.
 		 */
-		let pets = Array.from(
+		let pets: string[] = Array.from(
 			formItems.getAll('petname[]'),
 			(el) => el.toString()
 		)
