@@ -1,5 +1,6 @@
 <script>
 	import { createAccordion } from '@grail-ui/svelte'
+	import { setContext } from 'svelte'
 
 	const {
 		useAccordion,
@@ -7,6 +8,8 @@
 		triggerAttrs,
 		contentAttrs
 	} = createAccordion()
+
+	setContext('triggerAttrs', triggerAttrs)
 
 	export let data = [
 		{
@@ -28,21 +31,16 @@
 </script>
 
 <ul use:useAccordion>
-	{#each data as item}
-		<li {...$itemAttrs(item.key)}>
-			<button {...$triggerAttrs(item.key)}
-				>{item.title}</button
-			>
-			<div {...$contentAttrs(item.key)}>{item.content}</div>
-		</li>
-	{/each}
+	<slot>
+		{#each data as item}
+			<li {...$itemAttrs(item.key)}>
+				<button {...$triggerAttrs(item.key)}
+					>{item.title}</button
+				>
+				<div {...$contentAttrs(item.key)}>
+					{item.content}
+				</div>
+			</li>
+		{/each}
+	</slot>
 </ul>
-
-<style>
-	/* I needed to add this */
-	button[aria-expanded='false'] + div {
-		display: none;
-	}
-
-	/* TODO: draw the rest of the owl */
-</style>
