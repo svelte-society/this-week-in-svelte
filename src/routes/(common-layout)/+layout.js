@@ -1,4 +1,4 @@
-/** @type {import('./$types').LayoutLoad} */
+/** @type {import('../$types').LayoutLoad} */
 export async function load() {
 	return { globalStyles: true }
 }

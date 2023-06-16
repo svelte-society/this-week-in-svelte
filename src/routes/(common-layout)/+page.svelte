@@ -24,4 +24,7 @@
 			>Loading images (and reusable types)</a
 		>
 	</li>
+	<li>
+		<a href="/hamburger-menu">Hamburger menu</a>
+	</li>
 </ul>
