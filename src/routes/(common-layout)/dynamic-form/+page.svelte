@@ -1,14 +1,28 @@
 <script lang="ts">
+	import { dev } from '$app/environment'
 	import { enhance } from '$app/forms'
 	import type { ActionData } from './$types'
 
 	export let form: ActionData
-	$: console.log({ form })
-	let pets = ['']
+
+	// Form items
+	$: items = Object.fromEntries(form?.items ?? [])
+
+	let pets: Array<string> = ['']
 	$: {
 		if (form?.pets) {
-			pets = form.pets.map((el) => el.toString())
+			pets = form.pets.map((el, i) => el.toString())
+			console.log('reassign', pets)
 		}
+	}
+
+	if (form?.success === true) {
+		pets = ['']
+	}
+
+	const addPet = () => {
+		pets.push('')
+		pets = pets
 	}
 </script>
 
@@ -18,8 +32,28 @@
 
 <h1>Dynamic form</h1>
 
+{#if dev}
+	<p>{JSON.stringify(form)}</p>
+{/if}
+
 {#if form?.success === true}
-	<p><strong>You did it!</strong></p>
+	<div class="review">
+		<h2>Review</h2>
+		<ul>
+			{#each form.items as [key, value], i}
+				{#if key === 'petname[]'}
+					{@const numOfPets = form.items.filter(
+						(el) => el[0] === 'petname[]'
+					).length}
+					<li>
+						Pet name {i}: {value}
+					</li>
+				{:else}
+					<li>{key}: {value}</li>
+				{/if}
+			{/each}
+		</ul>
+	</div>
 {/if}
 
 <form
@@ -33,32 +67,15 @@
 		<input
 			name="name"
 			type="text"
-			value={form?.items?.name ?? ''}
+			value={items.name ?? ''}
 		/>
 	</label>
 
-	<fieldset>
-		<legend>How many pets do you have?</legend>
-
-		<label>
-			<input type="radio" name="pets" value="0" />
-			0
-		</label>
-		<label>
-			<input type="radio" name="pets" value="1" />
-			1
-		</label>
-		<label>
-			<input type="radio" name="pets" value="2" />
-			2
-		</label>
-		<label>
-			<input type="radio" name="pets" value="3" />
-			3+
-		</label>
-	</fieldset>
-	<br />
 	{#each pets as pet, i}
+		{#if dev}
+			<p>Pets {JSON.stringify(pets)}</p>
+			<p>Pet {JSON.stringify(pet)}</p>
+		{/if}
 		<label for="petname-{i}">Pet #{i + 1}'s name</label>
 		<input
 			id="petname-{i}"
@@ -73,7 +90,8 @@
 	<div>
 		<button
 			style="--color-link: #444;"
-			formaction="?/addPet">Add pet name</button
+			formaction="?/addPet"
+			on:click|preventDefault={addPet}>Add pet name</button
 		>
 		<button>Submit form!</button>
 	</div>
@@ -89,5 +107,9 @@
 	}
 	input + .remove {
 		margin-bottom: 1.5rem;
+	}
+	.review {
+		background-color: lightgreen;
+		padding: 0.5rem;
 	}
 </style>

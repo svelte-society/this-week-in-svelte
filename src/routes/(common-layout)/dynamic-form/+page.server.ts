@@ -3,7 +3,6 @@ import type { Actions } from './$types'
 export const actions: Actions = {
 	addPet: async ({ request }) => {
 		const formItems = await request.formData()
-		console.log({ formItems })
 
 		const items = [...formItems.entries()]
 
@@ -33,9 +32,12 @@ export const actions: Actions = {
 
 		return { items, pets }
 	},
-	submit: async () => {
+	submit: async ({ request }) => {
 		console.log('submitted!')
 
-		return { success: true }
+		const formData = await request.formData()
+		const items = [...formData.entries()]
+
+		return { success: true, items }
 	}
 }
