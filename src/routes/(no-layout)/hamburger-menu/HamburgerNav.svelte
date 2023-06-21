@@ -30,7 +30,8 @@
 	<div class="hamburger-wrapper">
 		<!-- Fallback hamburger link -->
 		<a href="#footer" class="hamburger"
-			>{@html hamburgerIcon} Fancy restaurant</a
+			>{@html hamburgerIcon} Fancy restaurant
+			<span class="a11y-hidden">menu</span></a
 		>
 		<!-- Enhanced hamburger button -->
 		<button
@@ -39,7 +40,8 @@
 			aria-expanded={open}
 			aria-controls="nav"
 			on:click={() => (open = !open)}
-			>{@html hamburgerIcon} Fancy restaurant</button
+			>{@html hamburgerIcon} Fancy restaurant
+			<span class="a11y-hidden">menu</span></button
 		>
 	</div>
 
@@ -60,6 +62,11 @@
 </div>
 
 <style>
+	.a11y-hidden {
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+	}
 	.wrapper {
 		background-color: black;
 		color: white;
@@ -90,6 +97,7 @@
 		fill: white;
 		stroke: white;
 		margin-right: 0.25rem;
+		pointer-events: none;
 	}
 	.hamburger:hover {
 		font-weight: 600;
