@@ -77,8 +77,9 @@
 	.hamburger-wrapper {
 		display: flex;
 		flex-direction: row;
-
-		@media (width > 540px) {
+	}
+	@media (width > 540px) {
+		.hamburger-wrapper {
 			display: none;
 		}
 	}
@@ -108,8 +109,9 @@
 		display: none;
 		padding-left: 1.5rem;
 		font-size: 1.5rem;
-
-		@media (width > 540px) {
+	}
+	@media (width > 540px) {
+		.title {
 			display: inline-block;
 		}
 	}
@@ -119,14 +121,17 @@
 		background-color: black;
 		position: relative;
 		color: white;
-
-		@media (width > 540px) {
+	}
+	@media (width > 540px) {
+		.nav {
 			display: block;
 			padding-left: 0.75rem;
 		}
 	}
 	.nav.open {
-		@media (width <= 540px) {
+	}
+	@media (width <= 540px) {
+		.nav.open {
 			display: block;
 			position: absolute;
 			top: 4rem;
@@ -137,8 +142,9 @@
 	.nav ul {
 		list-style: none;
 		padding: 0;
-
-		@media (width > 540px) {
+	}
+	@media (width > 540px) {
+		.nav ul {
 			display: flex;
 		}
 	}

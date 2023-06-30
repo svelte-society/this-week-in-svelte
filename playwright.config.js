@@ -1,4 +1,4 @@
-import { devices } from '@playwright/test';
+import { devices } from '@playwright/test'
 
 /** @type {import('@playwright/test').PlaywrightTestConfig} */
 const config = {
@@ -26,10 +26,10 @@ const config = {
 		}
 	],
 	webServer: {
-		command: 'npm run build && npm run preview',
-		port: 4173
+		command: 'pnpm dev',
+		port: 5173
 	},
 	testDir: 'tests'
-};
+}
 
-export default config;
+export default config

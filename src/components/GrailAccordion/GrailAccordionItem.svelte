@@ -44,20 +44,19 @@
 		text-align: left;
 		padding: 0.5em;
 		font-size: 1.25rem;
+	}
+	button[aria-expanded='true'] {
+		color: white;
+		background: black;
+	}
 
-		&[aria-expanded='true'] {
-			color: white;
-			background: black;
-		}
+	button:hover {
+		box-shadow: inset 0 -2px 0px -2px black;
+	}
 
-		&:hover {
-			box-shadow: inset 0 -2px 0px -2px black;
-		}
-
-		&:focus {
-			outline: 2px solid black;
-			outline-offset: 2px;
-		}
+	button:focus {
+		outline: 2px solid black;
+		outline-offset: 2px;
 	}
 
 	div {
