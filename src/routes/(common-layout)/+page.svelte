@@ -1,5 +1,13 @@
+<script>
+	import { navigating } from '$app/stores'
+</script>
+
 <h1>This week in Svelte</h1>
 <p>Demos</p>
+
+{#if $navigating !== null}
+	<p>Loading page...</p>
+{/if}
 
 <ul>
 	<li><a href="/links">Links on a page</a></li>
