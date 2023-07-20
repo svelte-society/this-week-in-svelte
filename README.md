@@ -1,6 +1,9 @@
 # This Week in Svelte
 
-A collection of demos made for the "This Week in Svelte" livestream.
+Live website: <https://this-week-in-svelte.netlify.app/>
+
+This repository is a collection of demos made for the "This Week in Svelte"
+livestream.
 
 - Join the [Svelte Discord](https://svelte.dev/chat).
 - Watch ["This Week in Svelte" on YouTube](https://youtube.com/playlist?list=PL8bMgX1kyZTiLCyvf8vF13sdnR4fhNl6v)
@@ -36,3 +39,6 @@ REPL links:
 - [Forwarding events](https://svelte.dev/repl/420ba8606b1148a0878c24f23c498917?version=3.58.0)
 - [Reactive deep object binding](https://svelte.dev/repl/357945f9985d4458992ff89070689fed?version=3.58.0)
 - [Skip links](https://www.sveltelab.dev/lqpb2gw177tgq9t)
+- [Navigation demo](https://www.sveltelab.dev/y65q2x6psxf3hk2)
+- [Markdown with mdsvex](https://www.sveltelab.dev/vcrn9v2tu26r6x8)
+- [No layout shift progressive enhancement Tabs](https://www.sveltelab.dev/5fb8n9qh3qd9see)
