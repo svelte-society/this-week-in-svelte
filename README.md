@@ -27,6 +27,8 @@ Other examples:
 
 - [Static blog with live
   data](./_examples/static-blog-with-data/)
+- [Web Components made in Svelte](./_examples/webcomponents/)
+
 
 REPL links:
 
