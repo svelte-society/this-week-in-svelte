@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script type="module" src="./dist/Card.js">
+	</script>
+</head>
+
+<body>
+	<twis-card title="My awesome card" complex='{"number": 3}'></twis-card>
+</body>
+
+<script>
+	document.querySelector("twis-card").title = "Another title"
+</script>
+
+</html>
