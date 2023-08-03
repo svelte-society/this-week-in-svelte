@@ -4,6 +4,7 @@
 		GrailAccordion,
 		GrailAccordionItem
 	} from '$components/GrailAccordion'
+	import ButtonHouse from './ButtonHouse.svelte'
 </script>
 
 <svelte:head>
@@ -24,3 +25,14 @@
 		</svelte:fragment>
 	</GrailAccordionItem>
 </GrailAccordion>
+
+<ButtonHouse
+	on:cat={(/** @type {{ detail: { name: 'tom' }}} */ e) =>
+		console.log(e.detail)}
+/>
+
+{#if true}
+	<!-- Show everyone the `as const` trick -->
+	{@const person = { name: 'Piers' }}
+	<p>Name is {person.name}</p>
+{/if}

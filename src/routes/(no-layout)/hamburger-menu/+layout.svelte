@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-	<title>Hambuger menu demonstration</title>
+	<title>Hamburger menu demonstration</title>
 </svelte:head>
 
 <header>
