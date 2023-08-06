@@ -3,6 +3,9 @@
 	const dispatch = createEventDispatcher()
 </script>
 
+<!-- 
+	@component My ButtonHouse
+ -->
 <button
 	on:click={() =>
 		dispatch('cat', {

@@ -32,7 +32,6 @@
 />
 
 {#if true}
-	<!-- Show everyone the `as const` trick -->
-	{@const person = { name: 'Piers' }}
+	{@const person = /** @type {const} */ ({ name: 'Piers' })}
 	<p>Name is {person.name}</p>
 {/if}
