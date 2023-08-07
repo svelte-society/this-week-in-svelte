@@ -29,7 +29,6 @@ Other examples:
   data](./_examples/static-blog-with-data/)
 - [Web Components made in Svelte](./_examples/webcomponents/)
 
-
 REPL links:
 
 - [Cross-component communication and focus management](https://svelte.dev/repl/773dd5b950394555955bf0c618bdb7cf?version=3.58.0)
@@ -44,3 +43,4 @@ REPL links:
 - [Navigation demo](https://www.sveltelab.dev/y65q2x6psxf3hk2)
 - [Markdown with mdsvex](https://www.sveltelab.dev/vcrn9v2tu26r6x8)
 - [No layout shift progressive enhancement Tabs](https://www.sveltelab.dev/5fb8n9qh3qd9see)
+- ["NoSSR component" by Paolo](https://www.sveltelab.dev/127sz4i474ph603)
