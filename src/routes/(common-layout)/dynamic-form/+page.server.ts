@@ -10,7 +10,7 @@ export const actions: Actions = {
 		 * The pets.
 		 */
 		let pets: string[] = Array.from(
-			formItems.getAll('petname[]'),
+			formItems.getAll('petname'),
 			(el) => el.toString()
 		)
 		pets.push('')
@@ -24,11 +24,11 @@ export const actions: Actions = {
 		console.log({ pet })
 
 		const items = [...formItems.entries()]
-		const pets = [...formItems.getAll('petname[]')]
+		const pets = [...formItems.getAll('petname')]
 
-		if (pet > 0) {
-			pets.splice(pet, pet)
-		}
+		pets.splice(pet, 1)
+
+		console.log('After removal', { pets })
 
 		return { items, pets }
 	},

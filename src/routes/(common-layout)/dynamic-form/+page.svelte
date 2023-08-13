@@ -9,20 +9,21 @@
 	$: items = Object.fromEntries(form?.items ?? [])
 
 	let pets: Array<string> = ['']
-	$: {
-		if (form?.pets) {
-			pets = form.pets.map((el, i) => el.toString())
-			console.log('reassign', pets)
-		}
+	const formPetsUpdated = (formPets) => {
+		console.log({ formPets })
+		if (!formPets) return
+		pets = formPets.map((el, i) => el.toString())
+		console.log('reassign', pets)
 	}
+	$: formPetsUpdated(form?.pets)
 
 	if (form?.success === true) {
 		pets = ['']
 	}
 
 	const addPet = () => {
-		pets.push('')
-		pets = pets
+		console.log('add pet')
+		pets = [...pets, '']
 	}
 </script>
 
@@ -41,9 +42,9 @@
 		<h2>Review</h2>
 		<ul>
 			{#each form.items as [key, value], i}
-				{#if key === 'petname[]'}
+				{#if key === 'petname'}
 					{@const numOfPets = form.items.filter(
-						(el) => el[0] === 'petname[]'
+						(el) => el[0] === 'petname'
 					).length}
 					<li>
 						Pet name {i}: {value}
@@ -80,7 +81,7 @@
 		<input
 			id="petname-{i}"
 			type="text"
-			name="petname[]"
+			name="petname"
 			value={pet}
 		/>
 		<button class="remove" formaction="?/removePet&pet={i}"
