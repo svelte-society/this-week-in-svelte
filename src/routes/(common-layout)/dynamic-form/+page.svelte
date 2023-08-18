@@ -2,8 +2,21 @@
 	import { dev } from '$app/environment'
 	import { enhance } from '$app/forms'
 	import type { ActionData } from './$types'
+	import { tick } from 'svelte'
 
 	export let form: ActionData
+
+	let summaryWrapper: HTMLElement
+	const focus = async () => {
+		await tick()
+		summaryWrapper.focus()
+	}
+	$: {
+		if (form?.success !== undefined) {
+			focus()
+		}
+	}
+	$: errors = form?.errors ?? {}
 
 	// Form items
 	$: items = Object.fromEntries(form?.items ?? [])
@@ -37,15 +50,20 @@
 	<p>{JSON.stringify(form)}</p>
 {/if}
 
-{#if form?.success === true}
-	<div class="review">
+<div
+	class="review error"
+	class:error={form?.success === false}
+	style:display={form?.success === undefined
+		? 'none'
+		: 'block'}
+	tabindex="-1"
+	bind:this={summaryWrapper}
+>
+	{#if form?.success === true}
 		<h2>Review</h2>
 		<ul>
 			{#each form.items as [key, value], i}
 				{#if key === 'petname'}
-					{@const numOfPets = form.items.filter(
-						(el) => el[0] === 'petname'
-					).length}
 					<li>
 						Pet name {i}: {value}
 					</li>
@@ -54,8 +72,17 @@
 				{/if}
 			{/each}
 		</ul>
-	</div>
-{/if}
+	{/if}
+
+	{#if form?.success === false}
+		<h2>There were errors in your submission</h2>
+		<ul>
+			{#each Object.entries(errors) as [fieldname, message]}
+				<li><a href="#{fieldname}-field">{message}</a></li>
+			{/each}
+		</ul>
+	{/if}
+</div>
 
 <form
 	method="POST"
@@ -63,14 +90,23 @@
 	use:enhance
 	data-sveltekit-noscroll
 >
-	<label>
+	<!--
+		Need to use `for` attribute otherwise error text
+		may not get read!
+	-->
+	<label for="name-field">
 		Your name
-		<input
-			name="name"
-			type="text"
-			value={items.name ?? ''}
-		/>
+		{#if errors?.name}
+			<br /><span class="inline-error">{errors.name}</span>
+		{/if}
 	</label>
+	<input
+		id="name-field"
+		name="name"
+		type="text"
+		value={items.name ?? ''}
+		aria-invalid={!!errors?.name}
+	/>
 
 	{#each pets as pet, i}
 		{#if dev}
@@ -112,5 +148,12 @@
 	.review {
 		background-color: lightgreen;
 		padding: 0.5rem;
+	}
+	.error {
+		background-color: rgba(255, 181, 192, 50%);
+		border: 4px solid crimson;
+	}
+	.inline-error {
+		color: crimson;
 	}
 </style>

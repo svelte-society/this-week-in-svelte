@@ -1,3 +1,4 @@
+import { fail } from '@sveltejs/kit'
 import type { Actions } from './$types'
 
 export const actions: Actions = {
@@ -36,7 +37,24 @@ export const actions: Actions = {
 		console.log('submitted!')
 
 		const formData = await request.formData()
-		const items = [...formData.entries()]
+		const items: [string, any][] = [...formData.entries()]
+
+		console.log({ items })
+
+		interface Errors {
+			[key: string]: string
+		}
+		const errors: Errors = {}
+		if (!formData.get('name')) {
+			errors.name = 'Please fill your name'
+		}
+		if (Object.keys(errors).length > 0) {
+			return fail(400, {
+				success: false,
+				items,
+				errors
+			})
+		}
 
 		return { success: true, items }
 	}
