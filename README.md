@@ -45,3 +45,4 @@ REPL links:
 - [No layout shift progressive enhancement Tabs](https://www.sveltelab.dev/5fb8n9qh3qd9see)
 - ["NoSSR component" by Paolo](https://www.sveltelab.dev/127sz4i474ph603)
 - ["Toggle Switch" by Enrico](https://svelte.dev/repl/43a1db77f9434391b41783ef4e414fd3?version=4.1.2)
+- ["Enhanced search" by Enrico](https://www.sveltelab.dev/7qfujs8m2rc51ew)
