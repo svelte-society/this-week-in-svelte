@@ -1,5 +1,0 @@
-// Vitest Snapshot v1
-
-exports[`Card.svelte > mounts 1`] = `"<div><div class=\\"card svelte-1g8u0r7\\"></div></div>"`;
-
-exports[`Card.svelte > renders purple 1`] = `"<div><div class=\\"card svelte-1g8u0r7 purple\\"></div></div>"`;

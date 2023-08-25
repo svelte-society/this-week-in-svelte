@@ -1,0 +1,5 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`thing > mounts 1`] = `"<div><div class=\\"card svelte-1g8u0r7\\">My content</div></div>"`;
+
+exports[`thing > renders purple 1`] = `"<div><div class=\\"card svelte-1g8u0r7 purple\\"></div></div>"`;
