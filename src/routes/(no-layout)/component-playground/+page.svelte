@@ -5,6 +5,8 @@
 		GrailAccordionItem
 	} from '$components/GrailAccordion'
 	import ButtonHouse from './ButtonHouse.svelte'
+	import CoolButton from '$components/SharedButtons/CoolButton.svelte'
+	import Button from '$components/SharedButtons/Button.svelte'
 </script>
 
 <svelte:head>
@@ -30,6 +32,13 @@
 	on:cat={(/** @type {{ detail: { name: 'tom' }}} */ e) =>
 		console.log(e.detail)}
 />
+
+<h2>Shared props examples.</h2>
+
+<Button kind="primary">Regular button</Button>
+<CoolButton kind="primary">Cool button</CoolButton>
+
+<h2>JSDoc 'as const' typing</h2>
 
 {#if true}
 	{@const person = /** @type {const} */ ({ name: 'Piers' })}
