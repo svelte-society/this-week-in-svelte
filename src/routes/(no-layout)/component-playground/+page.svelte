@@ -7,6 +7,7 @@
 	import ButtonHouse from './ButtonHouse.svelte'
 	import CoolButton from '$components/SharedButtons/CoolButton.svelte'
 	import Button from '$components/SharedButtons/Button.svelte'
+	import JsDocButton from '$components/SharedButtons/JSDocButton.svelte'
 </script>
 
 <svelte:head>
@@ -37,6 +38,8 @@
 
 <Button kind="primary">Regular button</Button>
 <CoolButton kind="primary">Cool button</CoolButton>
+<!-- TODO, fix type error -->
+<JsDocButton>JSDoc Button</JsDocButton>
 
 <h2>JSDoc 'as const' typing</h2>
 
