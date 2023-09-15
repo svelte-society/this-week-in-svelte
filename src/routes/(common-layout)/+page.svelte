@@ -27,6 +27,7 @@
 		>
 	</li>
 	<li><a href="/error-handling">Error handling</a></li>
+	<li><a href="/jsform">JS Form</a></li>
 	<li>
 		<a href="/loading-images"
 			>Loading images (and reusable types)</a
